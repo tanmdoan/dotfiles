@@ -1,3 +1,6 @@
-Plug 'scrooloose/nerdtree'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-runner'
 Plug 'kien/ctrlp.vim'
-
+Plug 'milkypostman/vim-togglelist'
+Plug 'scrooloose/nerdtree'
+Plug 'gabebw/vim-spec-runner'

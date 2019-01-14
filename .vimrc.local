@@ -117,9 +117,32 @@ set nowritebackup
 " Disable swapfile
 set noswapfile
 
-" airline
-let g:airline_powerline_fonts=1
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
+"" ignore files for ctrlp
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s
+        \ -l
+        \ --nocolor
+        \ --ignore .git
+        \ --ignore .svn
+        \ --ignore "*.class"
+        \ --ignore "*.o"
+        \ --ignore "*.obj"
+        \ --ignore "*.rbc"
+        \ --ignore features/cassettes
+        \ --ignore spec/cassettes
+        \ --ignore tmp/cache
+        \ --ignore vendor/gems
+        \ --ignore vendor/ruby
+        \ -g ""'
 endif
-let g:airline_symbols.space = "\ua0"
+
+" Run specs quickly with tmux
+let g:VtrClearSequence = "clear"
+nmap <leader>h :VtrOpenRunner({'orientation': 'h', 'percentage': 33})<CR>
+nmap <leader>v :VtrOpenRunner({'orientation': 'v', 'percentage': 20})<CR>
+nmap <leader>k :VtrKillRunner<CR>
+let g:spec_runner_dispatcher = 'call VtrSendCommand("bundle exec {command}")'
+let g:disable_write_on_spec_run = 1
+map <leader>t <plug>RunCurrentSpecFile
+map <leader>T <plug>RunFocusedSpec
+map <leader>tl <plug>RunMostRecentSpec

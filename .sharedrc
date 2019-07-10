@@ -36,14 +36,23 @@ twiki () {
   rake db:migrate && rake db:migrate:redo && rake db:test:prepare
 }
 
+killports () {
+  for port in "$@"; do
+    pid=$(lsof -i tcp:$port -t)
+
+    if [[ $pid ]]; then
+      kill -9 $pid
+      echo "killed port: $port"
+    else
+      echo "No proccess matching port: $port"
+    fi
+  done
+}
+
 alias sc='rails console'
 alias ss='rails server'
 alias sdbc='rails dbconsole -p'
 alias hrc='heroku run rails console -a hu9ye4ckyh'
-alias kill3000='kill -9 $(lsof -i tcp:3000 -t)'
-alias kill3001='kill -9 $(lsof -i tcp:3001 -t)'
-alias kill4567='kill -9 $(lsof -i tcp:4567 -t)'
-alias kill9229='kill -9 $(lsof -i tcp:9229 -t)'
 alias ltmate="tmate display -p '#{tmate_ssh}'"
 alias rt='bundle exec spring rspec spec/acceptance --format RspecApiDocumentation::ApiFormatter'
 

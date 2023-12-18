@@ -1,9 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-# Fig pre block. Keep at the top of this file.
-export PATH="${PATH}:${HOME}/.local/bin:${HOME}/code/bin"
-eval "$(fig init zsh pre)"
-
 # zsh
   export ZPLUG_HOME=/usr/local/opt/zplug
   source $ZPLUG_HOME/init.zsh
@@ -93,7 +87,6 @@ eval "$(fig init zsh pre)"
   alias docker-clean="docker system prune"
 
 # k8/infra
-  alias aws-exec="aws-vault exec olympus --"
   alias k="kubectl"
 
 # mac only aliases
@@ -102,30 +95,10 @@ eval "$(fig init zsh pre)"
 # secrets file
   source ~/.secrets
 
-# starship
-  eval "$(starship init zsh)"
-
 # fzf
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# vmware k8
-  (( $+commands[infractl] )) && source <(infractl env export)
-
-# bun
-  export BUN_INSTALL="/Users/tandoan/.bun"
-  export PATH="$BUN_INSTALL/bin:$PATH"
-
-
-# infractl
-(( $+commands[infractl] )) && source <(infractl env export)
 
 # pnpm
 export PNPM_HOME="/Users/tandoan/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
-
-# vmware
-export KUBECONFIG=$HOME/.kube/tmc-local-eks
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

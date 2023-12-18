@@ -1,0 +1,70 @@
+[user]
+  name = Tan Doan
+  email = tdoan@vmware.com
+[github]
+  user = tanmdoan
+[core]
+  excludesfile = /Users/tandoan/.gitignore_global
+  editor = vi
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  features = side-by-side line-numbers decorations
+[alias]
+  a   = add
+  aa  = add -A :/
+  ap  = add -p
+  nap = git add -N --ignore-removal . && gap
+  b   = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(refname:short)'
+  bd  = branch -D
+  bn  = checkout -b
+  br  = browse
+  c   = commit
+  ca  = commit -a
+  caa = commit -a --amend
+  cl  = clone
+  co  = checkout
+  cm  = commit -v -m
+  d   = diff
+  f   = fetch
+  h   = log --pretty=format:'%h %ad | %s [%an]' --graph --date=short
+  l   = pull
+  lb  = checkout -
+  o   = checkout
+  m   = merge
+  mf  = merge --ff-only
+  p   = push -u
+  poh = push -u origin head
+  pr  = pull-request
+  s   = stash
+  ra  = remote add
+  rb  = rebase
+  rbc = rebase --continue
+  rbi = rebase -i
+  re  = reset
+  rr  = remote rm
+  rs  = remote -v show
+  ru  = clean  -d  -fx "" # delete untracked files
+  rv  = revert
+  sa  = stash apply
+  sh  = show
+  st  = status
+  tr  = branch -t
+[apply]
+  whitespace = fix
+[push]
+  default = simple
+  autoSetupRemote = true
+[pull]
+  default = tracking
+  rebase = true
+[init]
+  templatedir = ~/.git_template
+  defaultBranch = main
+[help]
+  autocorrect = 20
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true

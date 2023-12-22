@@ -20,7 +20,6 @@ brew "prettier"
 brew "zplug"
 brew "zsh-completions"
 
-{{ if .macos -}}
 brew "docker"
 brew "mas"
 brew "openssl"
@@ -34,4 +33,3 @@ cask "warp"
 
 mas "CopyClip", id: 1020812363
 mas "Divvy", id: 413857545
-{{ end -}}

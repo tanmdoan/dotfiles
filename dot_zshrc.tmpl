@@ -1,32 +1,6 @@
 # zsh
-  export ZPLUG_HOME=/usr/local/opt/zplug
-  source $ZPLUG_HOME/init.zsh
   HYPHEN_INSENSITIVE=true
   COMPLETION_WAITING_DOTS=true
-
-# plugins
-  fpath=(/usr/local/share/zsh/site-functions $fpath)
-
-  if ! zplug check; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-  fi
-  zplug load
-
-# shell functions
-  fancy-ctrl-z () {
-    if [[ $#BUFFER -eq 0 ]]; then
-      BUFFER="fg"
-      zle accept-line
-    else
-      zle push-input
-      zle clear-screen
-    fi
-  }
-  zle -N fancy-ctrl-z
-  bindkey '^Z' fancy-ctrl-z
 
   function move-last-download {
     local download_dir="${HOME}/Downloads/"
@@ -51,6 +25,9 @@
       fi
     done
   }
+
+# autoujump
+  [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
 # git aliases
   alias gap='git add -p'
@@ -87,9 +64,6 @@
 
 # mac only aliases
   alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
-
-# secrets file
-  source ~/.secrets
 
 # pnpm
 export PNPM_HOME="/Users/tandoan/Library/pnpm"

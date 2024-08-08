@@ -1,6 +1,4 @@
 tap "github/gh"
-tap "homebrew/cask"
-tap "homebrew/cask-fonts"
 tap 'neovim/neovim'
 
 brew "autojump"
@@ -17,19 +15,12 @@ brew "n"
 brew "neovim"
 brew "pnpm"
 brew "prettier"
-brew "zplug"
-brew "zsh-completions"
 
 brew "docker"
 brew "mas"
 brew "openssl"
 
 cask_args appdir: "/Applications"
-cask "1password"
 cask "karabiner-elements"
 cask "visual-studio-code"
 cask "warp"
-
-
-mas "CopyClip", id: 1020812363
-mas "Divvy", id: 413857545

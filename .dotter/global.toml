@@ -1,0 +1,23 @@
+[helpers]
+
+[default]
+depends = []
+
+[default.files]
+".aliasrc" = "~/.aliasrc"
+".cigarettes.rc" = "~/.cigarettes.rc"
+".claude/CLAUDE.md" = "~/.claude/CLAUDE.md"
+".claude/settings.json" = "~/.claude/settings.json"
+".claude/skills" = "~/.claude/skills"
+".claude/statusline.sh" = "~/.claude/statusline.sh"
+".node-version" = "~/.node-version"
+".nvmrc" = "~/.nvmrc"
+".zshrc" = "~/.zshrc"
+"Brewfile" = "~/Brewfile"
+"karabiner.json" = "~/.config/karabiner/karabiner.json"
+
+
+[default.variables]
+
+[settings]
+default_target_type = "automatic"

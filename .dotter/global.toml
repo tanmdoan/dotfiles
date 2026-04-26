@@ -5,7 +5,7 @@ depends = []
 
 [default.files]
 ".aliasrc" = "~/.aliasrc"
-".cigarettes.rc" = "~/.cigarettes.rc"
+# ".cigarettes.rc" = "~/.cigarettes.rc"
 ".claude/CLAUDE.md" = "~/.claude/CLAUDE.md"
 ".claude/settings.json" = "~/.claude/settings.json"
 ".claude/skills" = "~/.claude/skills"
@@ -15,6 +15,7 @@ depends = []
 ".zshrc" = "~/.zshrc"
 "Brewfile" = "~/Brewfile"
 "karabiner.json" = "~/.config/karabiner/karabiner.json"
+"nvim" = "~/.config/nvim"
 
 
 [default.variables]

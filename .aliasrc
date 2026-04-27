@@ -43,3 +43,4 @@
 
 # editors
   alias zed='open -a "Zed Preview"'
+  alias vi='nvim'

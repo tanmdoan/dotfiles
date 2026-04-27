@@ -2,3 +2,5 @@
 !.dotter/global.toml
 !.dotter/post_deploy.sh
 !.dotter/pre_deploy.sh
+
+.DS_Store

@@ -11,6 +11,7 @@ end, { desc = "Find files" })
 
 vim.keymap.set("n", "<leader>W", "<cmd>w<cr>", { desc = "Save file" })
 vim.keymap.set("n", "<leader>X", "<cmd>x<cr>", { desc = "Save and close" })
+vim.keymap.set("n", "<leader>Q", "<cmd>close<cr>", { desc = "Close pane" })
 
 for _, lhs in ipairs({ "<A-j>", "<A-k>" }) do
   for _, mode in ipairs({ "n", "i", "v" }) do

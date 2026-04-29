@@ -18,3 +18,9 @@ for _, lhs in ipairs({ "<A-j>", "<A-k>" }) do
     pcall(vim.keymap.del, mode, lhs)
   end
 end
+
+vim.keymap.set("n", "<A-k>", "<cmd>resize +2<cr>", { desc = "Resize pane up" })
+vim.keymap.set("n", "<A-j>", "<cmd>resize -2<cr>", { desc = "Resize pane down" })
+vim.keymap.set("n", "<A-h>", "<cmd>vertical resize -2<cr>", { desc = "Resize pane left" })
+vim.keymap.set("n", "<A-l>", "<cmd>vertical resize +2<cr>", { desc = "Resize pane right" })
+vim.keymap.set("n", "<A-=>", "<C-w>=", { desc = "Reset pane sizes" })

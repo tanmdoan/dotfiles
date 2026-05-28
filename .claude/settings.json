@@ -1,79 +1,83 @@
 {
-  "alwaysThinkingEnabled": true,
-  "editorMode": "vim",
-  "effortLevel": "high",
-  "enabledPlugins": {
-    "code-simplifier@claude-plugins-official": true,
-    "codex@openai-codex": true,
-    "ruby-lsp@claude-plugins-official": true,
-    "warp@claude-code-warp": true
-  },
   "env": {
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "true"
   },
-  "extraKnownMarketplaces": {
-    "claude-code-warp": {
-      "source": {
-        "repo": "warpdotdev/claude-code-warp",
-        "source": "github"
-      }
-    },
-    "openai-codex": {
-      "source": {
-        "repo": "openai/codex-plugin-cc",
-        "source": "github"
-      }
-    }
-  },
+  "model": "opus[1m]",
   "hooks": {
     "PostToolUse": [
       {
+        "matcher": "Write|Edit|MultiEdit",
         "hooks": [
           {
-            "command": "/usr/local/bin/aicodemetricsd hook claude --hook-input stdin",
-            "type": "command"
+            "type": "command",
+            "command": "/usr/local/bin/aicodemetricsd hook claude --hook-input stdin"
           }
-        ],
-        "matcher": "Write|Edit|MultiEdit"
+        ]
       }
     ],
     "PreCompact": [
       {
         "hooks": [
           {
-            "command": "/usr/local/bin/aicodemetricsd hook claude --hook-input stdin",
-            "type": "command"
+            "type": "command",
+            "command": "/usr/local/bin/aicodemetricsd hook claude --hook-input stdin"
           }
         ]
       }
     ],
     "PreToolUse": [
       {
+        "matcher": "Write|Edit|MultiEdit",
         "hooks": [
           {
-            "command": "/usr/local/bin/aicodemetricsd hook claude --hook-input stdin",
-            "type": "command"
+            "type": "command",
+            "command": "/usr/local/bin/aicodemetricsd hook claude --hook-input stdin"
           }
-        ],
-        "matcher": "Write|Edit|MultiEdit"
+        ]
       }
     ],
     "SessionEnd": [
       {
         "hooks": [
           {
-            "command": "/usr/local/bin/aicodemetricsd hook claude --hook-input stdin",
-            "type": "command"
+            "type": "command",
+            "command": "/usr/local/bin/aicodemetricsd hook claude --hook-input stdin"
           }
         ]
       }
     ]
   },
-  "model": "opus[1m]",
-  "skipDangerousModePermissionPrompt": true,
   "statusLine": {
+    "type": "command",
     "command": "~/.claude/statusline.sh",
-    "padding": 0,
-    "type": "command"
+    "padding": 0
+  },
+  "enabledPlugins": {
+    "code-simplifier@claude-plugins-official": true,
+    "codex@openai-codex": true,
+    "ruby-lsp@claude-plugins-official": true,
+    "warp@claude-code-warp": true
+  },
+  "extraKnownMarketplaces": {
+    "claude-code-warp": {
+      "source": {
+        "source": "github",
+        "repo": "warpdotdev/claude-code-warp"
+      }
+    },
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
+    }
+  },
+  "alwaysThinkingEnabled": true,
+  "effortLevel": "high",
+  "skipDangerousModePermissionPrompt": true,
+  "editorMode": "vim",
+  "skipAutoPermissionPrompt": true,
+  "permissions": {
+    "defaultMode": "auto"
   }
 }

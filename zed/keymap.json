@@ -1,0 +1,156 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Editor || Workspace",
+    "bindings": {},
+  },
+  {
+    "context": "Editor || Workspace",
+    "bindings": {
+      // Fuzzy finder
+      "ctrl-p": "file_finder::Toggle",
+      "shift shift": "file_finder::Toggle",
+
+      // Window movement bindings
+      // Ctrl jklk to move between panes
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+
+      // Chat with AI
+      "cmd-l": "workspace::ToggleRightDock",
+      "cmd-c": "agent::Chat",
+
+      // Reset/resize pane sizes
+      "alt-k": "vim::ResizePaneUp",
+      "alt-j": "vim::ResizePaneDown",
+      "alt-h": "vim::ResizePaneLeft",
+      "alt-l": "vim::ResizePaneRight",
+      "alt =": "vim::ResetPaneSizes",
+    },
+  },
+  {
+    "context": "(Editor) && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
+    "bindings": {
+      // put key-bindings here if you want them to work in normal & visual mode
+      // Git
+      ", g h d": "editor::ToggleSelectedDiffHunks",
+      ", g h r": "git::Restore",
+      ", g h b": "git::Blame",
+
+      // Toggle inlay hints
+      ", t i": "editor::ToggleInlayHints",
+
+      // Toggle soft wrap
+      ", u w": "editor::ToggleSoftWrap",
+
+      // NOTE: Toggle Zen mode, not fully working yet
+      // ", c z": "workspace::ToggleCenteredLayout",
+
+      // Open markdown preview
+      ", m p": "markdown::OpenPreview",
+      ", m P": "markdown::OpenPreviewToTheSide",
+
+      ", c p": "workspace::CopyRelativePath",
+
+      // Open recent project
+      "ctrl-w": "projects::OpenRecent",
+
+      // Search word under cursor
+      ", backspace": "pane::DeploySearch",
+
+      // Search entire workspace (like leader-a, using ag search)
+      ", a": "workspace::NewSearch",
+
+      // Code actions
+      // Toggle
+      ", c a": "editor::ToggleCodeActions",
+
+      // Diagnostic
+      ", x x": "diagnostics::Deploy",
+
+      // Chat with AI
+      // "cmd-l": "workspace::ToggleRightDock",
+      // this doesn't work right now, so use cmd-> instead for now
+      ", c c": "assistant::CopyCode",
+      // Go to file with `gf`
+      "g f": "editor::OpenExcerpts",
+      // Zoom into current file
+      "g z": "workspace::ToggleZoom",
+      ", l": "editor::SelectLine",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      // put key-bindings here if you want them to work only in normal mode
+      // Window movement bindings
+      // Ctrl jklk to move between panes
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+
+      // find all references under cursor
+      "g r": "editor::FindAllReferences",
+
+      "J": "vim::JoinLines",
+
+      ", |": "pane::SplitVertical",
+      ", -": "pane::SplitHorizontal",
+
+      // Toggle left dock (explorer)
+      ", e": "workspace::ToggleLeftDock",
+
+      // Save file
+      ", W": "workspace::Save",
+
+      // + Buffers
+      // Switch between buffers
+      "cmd-1": ["pane::ActivateItem", 0],
+      "cmd-2": ["pane::ActivateItem", 1],
+      "cmd-3": ["pane::ActivateItem", 2],
+      "cmd-4": ["pane::ActivateItem", 3],
+
+      "t h": "pane::ActivatePrevItem",
+      "t l": "pane::ActivateNextItem",
+      // Close active panel
+      ", Q": "pane::CloseActiveItem",
+    },
+  },
+  // File panel (netrw)
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "o": "project_panel::NewFile",
+      "O": "project_panel::NewDirectory",
+      "r": "project_panel::Rename",
+      "d": "project_panel::Delete",
+      "x": "project_panel::Cut",
+      "c": "project_panel::Copy",
+      "p": "project_panel::Paste",
+      // Close project panel as project file panel on the right
+      // "q": "workspace::ToggleRightDock",
+      "space e": "workspace::ToggleRightDock",
+      // Navigate between panel
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+    },
+  },
+  // {
+  //   "context": "Editor && vim_mode == insert && !menu",
+  //   "bindings": {
+  //     "j j": "vim::NormalBefore", // remap jj in insert mode to escape
+  //     "j k": "vim::NormalBefore" // remap jk in insert mode to escape
+  //   }
+  // }
+]

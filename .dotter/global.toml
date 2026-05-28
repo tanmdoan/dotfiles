@@ -16,6 +16,8 @@ depends = []
 "Brewfile" = "~/Brewfile"
 "karabiner.json" = "~/.config/karabiner/karabiner.json"
 "nvim" = "~/.config/nvim"
+"zed/settings.json" = "~/.config/zed/settings.json"
+"zed/keymap.json" = "~/.config/zed/keymap.json"
 
 
 [default.variables]

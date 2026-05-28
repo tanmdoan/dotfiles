@@ -1,5 +1,6 @@
 .dotter/*
 !.dotter/global.toml
+!.dotter/local.toml
 !.dotter/post_deploy.sh
 !.dotter/pre_deploy.sh
 

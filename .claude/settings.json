@@ -2,6 +2,9 @@
   "env": {
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "true"
   },
+  "permissions": {
+    "defaultMode": "auto"
+  },
   "model": "opus[1m]",
   "hooks": {
     "PostToolUse": [
@@ -76,8 +79,5 @@
   "effortLevel": "high",
   "skipDangerousModePermissionPrompt": true,
   "editorMode": "vim",
-  "skipAutoPermissionPrompt": true,
-  "permissions": {
-    "defaultMode": "auto"
-  }
+  "skipAutoPermissionPrompt": true
 }

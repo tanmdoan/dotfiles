@@ -10,6 +10,7 @@ depends = []
 ".claude/settings.json" = "~/.claude/settings.json"
 ".claude/skills" = "~/.claude/skills"
 ".claude/statusline.sh" = "~/.claude/statusline.sh"
+".gitconfig" = "~/.gitconfig"
 ".node-version" = "~/.node-version"
 ".nvmrc" = "~/.nvmrc"
 ".zshrc.local" = "~/.zshrc.local"

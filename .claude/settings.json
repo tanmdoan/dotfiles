@@ -6,7 +6,6 @@
     "defaultMode": "auto"
   },
   "model": "opus[1m]",
-  "theme": "dark",
   "hooks": {
     "PostToolUse": [
       {
@@ -79,6 +78,8 @@
   "alwaysThinkingEnabled": true,
   "effortLevel": "high",
   "skipDangerousModePermissionPrompt": true,
+  "theme": "dark",
   "editorMode": "vim",
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "advisorModel": "opus"
 }

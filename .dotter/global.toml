@@ -4,6 +4,7 @@
 depends = []
 
 [default.files]
+".9to5rc" = "~/.9to5rc"
 ".aliasrc" = "~/.aliasrc"
 # ".cigarettes.rc" = "~/.cigarettes.rc"
 ".claude/CLAUDE.md" = "~/.claude/CLAUDE.md"

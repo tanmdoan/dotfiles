@@ -1,0 +1,7 @@
+export PGGSSENCMODE="disable"
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
+# aliases
+alias hb-admin="LOAD_ACTIVE_ADMIN=1 foreman start"
+alias hb-web="foreman start"
+alias hb-setup="cd client && bun install && cd .. && bundle && be rails db:migrate && hb-admin"%

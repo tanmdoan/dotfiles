@@ -1,0 +1,17 @@
+cursor-style = block
+cursor-style-blink = true
+
+font-size = 12
+font-family = Hack Nerd Font Mono
+font-thicken = true
+font-thicken-strength = 123
+
+shell-integration-features = no-cursor
+
+macos-titlebar-style = hidden
+macos-option-as-alt = true
+
+theme = TokyoNight
+
+keybind = ctrl+a>w>f=toggle_fullscreen
+keybind = ctrl+a>n=new_window

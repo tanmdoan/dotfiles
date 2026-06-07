@@ -70,3 +70,8 @@ eval "$(fnm env --use-on-cd --shell zsh)"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+
+# starship prompt — skip raw Warp (it has its own prompt); load in tmux/Ghostty/etc.
+if [[ -n "$TMUX" || "$TERM_PROGRAM" != "WarpTerminal" ]]; then
+  command -v starship >/dev/null 2>&1 && eval "$(starship init zsh)"
+fi

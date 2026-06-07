@@ -20,3 +20,23 @@ elif [ -e "$AGENTS_SKILLS" ]; then
 else
   ln -s "$CLAUDE_SKILLS" "$AGENTS_SKILLS"
 fi
+
+# bun + global bun packages (not available via brew).
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+if ! command -v bun >/dev/null 2>&1; then
+  echo "Installing bun…"
+  curl -fsSL https://bun.sh/install | bash
+fi
+
+# dmux self-updates, so this just guarantees it's present on a fresh machine.
+BUN_GLOBALS=(dmux)
+
+if command -v bun >/dev/null 2>&1; then
+  for pkg in "${BUN_GLOBALS[@]}"; do
+    bun pm ls -g 2>/dev/null | grep -q " ${pkg}@" || bun install -g "$pkg"
+  done
+else
+  echo "⚠️  bun install failed — install manually (https://bun.sh), then: bun install -g ${BUN_GLOBALS[*]}"
+fi

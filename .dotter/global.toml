@@ -14,12 +14,15 @@ depends = []
 ".gitconfig" = "~/.gitconfig"
 ".node-version" = "~/.node-version"
 ".nvmrc" = "~/.nvmrc"
+".tmux.conf" = "~/.tmux.conf"
 ".zshrc.local" = "~/.zshrc.local"
 "Brewfile" = "~/Brewfile"
 "karabiner.json" = "~/.config/karabiner/karabiner.json"
 "nvim" = "~/.config/nvim"
 "zed/settings.json" = "~/.config/zed/settings.json"
 "zed/keymap.json" = "~/.config/zed/keymap.json"
+"starship.toml" = "~/.config/starship.toml"
+"ghostty/config" = "~/.config/ghostty/config"
 
 
 [default.variables]

@@ -9,6 +9,7 @@ depends = []
 # ".cigarettes.rc" = "~/.cigarettes.rc"
 ".claude/CLAUDE.md" = "~/.claude/CLAUDE.md"
 ".claude/settings.json" = "~/.claude/settings.json"
+".claude/keybindings.json" = "~/.claude/keybindings.json"
 ".claude/skills" = { target = "~/.claude/skills", type = "symbolic" }
 ".claude/statusline.sh" = "~/.claude/statusline.sh"
 ".gitconfig" = "~/.gitconfig"

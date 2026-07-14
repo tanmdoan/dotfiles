@@ -71,6 +71,12 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
+# mise (provides go and other project-pinned toolchains)
+# shims keep tools on PATH for non-interactive shells (make, IDEs); activate adds
+# per-directory switching for interactive shells.
+[[ -d "$HOME/.local/share/mise/shims" ]] && export PATH="$HOME/.local/share/mise/shims:$PATH"
+command -v mise >/dev/null 2>&1 && eval "$(mise activate zsh)"
+
 # starship prompt — skip raw Warp (it has its own prompt); load in tmux/Ghostty/etc.
 if [[ -n "$TMUX" || "$TERM_PROGRAM" != "WarpTerminal" ]]; then
   command -v starship >/dev/null 2>&1 && eval "$(starship init zsh)"

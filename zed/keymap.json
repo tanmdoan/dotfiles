@@ -76,10 +76,6 @@
       // Diagnostic
       ", x x": "diagnostics::Deploy",
 
-      // Chat with AI
-      // "cmd-l": "workspace::ToggleRightDock",
-      // this doesn't work right now, so use cmd-> instead for now
-      ", c c": "assistant::CopyCode",
       // Go to file with `gf`
       "g f": "editor::OpenExcerpts",
       // Zoom into current file
@@ -119,7 +115,7 @@
       "cmd-3": ["pane::ActivateItem", 2],
       "cmd-4": ["pane::ActivateItem", 3],
 
-      "t h": "pane::ActivatePrevItem",
+      "t h": "pane::ActivatePreviousItem",
       "t l": "pane::ActivateNextItem",
       // Close active panel
       ", Q": "pane::CloseActiveItem",

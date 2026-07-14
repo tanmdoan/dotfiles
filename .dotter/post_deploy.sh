@@ -40,3 +40,15 @@ if command -v bun >/dev/null 2>&1; then
 else
   echo "⚠️  bun install failed — install manually (https://bun.sh), then: bun install -g ${BUN_GLOBALS[*]}"
 fi
+
+# ~/.zshrc is owned by the work setup script, so dotter doesn't manage it. Once it
+# exists, ensure it sources our personal config (idempotent — safe to re-run).
+ZSHRC="$HOME/.zshrc"
+if [ -f "$ZSHRC" ]; then
+  if ! grep -qF '.zshrc.local' "$ZSHRC"; then
+    printf '\n# load personal dotfiles config (added by dotfiles post_deploy)\n[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local\n' >> "$ZSHRC"
+    echo "Wired ~/.zshrc.local into ~/.zshrc"
+  fi
+else
+  echo "⚠️  ~/.zshrc not found yet — after your work setup script creates it, re-run 'dotter deploy' to wire in ~/.zshrc.local"
+fi

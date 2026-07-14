@@ -1,23 +1,35 @@
 ### Dotfiles
 
-Pre-reqs:
+Personal dotfiles, symlinked into place by [dotter](https://github.com/SuperCuber/dotter).
 
+## Fresh machine setup
 
-1. install homebrew 
-2. set up github ssh
-3. install/update xcode cli
-4. install dotter: `brew install dotter`
+One-time pre-reqs (manual):
 
+1. Install Homebrew
+2. Set up GitHub SSH
+3. Install/update Xcode CLI tools: `xcode-select --install`
+4. Install dotter: `brew install dotter`
 
-Run: 
+Then clone this repo and deploy:
 
 ```sh
 dotter deploy -v
 ```
 
-_TODOs_
+That's it — you do **not** need a separate `brew install` step. `dotter deploy`
+symlinks every config and runs the hooks automatically:
 
-- [x] set up rest of symlinks: .claude, .aliases, .nvmrc (doter)
-- [ ] set up some skills: karen, grill-me, 
-- [ ] build out the pre/postdeploy script
-- [ ] scripify pre-reqs
+- **pre_deploy** — removes app-rewritten files (Claude / Zed settings) so the
+  symlinks win on redeploy.
+- **post_deploy** — runs `brew bundle` (installs everything in `Brewfile`),
+  installs bun + dmux, mirrors skills into `~/.agents`, and wires
+  `~/.zshrc.local` into `~/.zshrc` once that file exists.
+
+## Shell (`~/.zshrc`)
+
+`~/.zshrc` is intentionally **not** managed by dotter — the work setup script
+owns it and can regenerate it freely. Personal zsh config lives in
+`~/.zshrc.local`. `post_deploy` appends a loader line to `~/.zshrc` when it
+exists. If you run `dotter deploy` before the work script has created
+`~/.zshrc`, just re-run `dotter deploy` afterward to wire it in.
